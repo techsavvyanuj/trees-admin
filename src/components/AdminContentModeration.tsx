@@ -83,12 +83,21 @@ const AdminContentModeration: React.FC = () => {
   const fetchReports = async () => {
     try {
       setLoading(true);
+      console.log('Fetching reports with filters:', filters);
+      console.log('API URL will be:', `${import.meta.env.VITE_API_BASE_URL}/api/admin/moderation/reports`);
+      
       const response = await moderationService.getReportedContent(currentPage, ITEMS_PER_PAGE, filters);
-      setReports(response.reports);
-      setTotalPages(response.pages);
-      setTotalItems(response.total);
+      console.log('Full API response:', response);
+      console.log('Reports array:', response.reports);
+      console.log('Response pages:', response.pages);
+      console.log('Response total:', response.total);
+      
+      setReports(response.reports || []);
+      setTotalPages(response.pages || 1);
+      setTotalItems(response.total || 0);
     } catch (error) {
       console.error('Error fetching reports:', error);
+      console.error('Error details:', error.response?.data);
       toast.error('Failed to fetch reports');
     } finally {
       setLoading(false);
