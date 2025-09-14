@@ -19,8 +19,8 @@ After creating the repository on GitHub, you'll see a page with setup instructio
 # Navigate to the project directory
 cd "/Users/anujmishra/Desktop/Treesadmin-main"
 
-# Add the remote repository (replace YOUR_USERNAME with your GitHub username)
-git remote add origin https://github.com/YOUR_USERNAME/trees-admin.git
+# Add the remote repository
+git remote add origin https://github.com/techsavvyanuj/trees-admin.git
 
 # Push the code to GitHub
 git branch -M main

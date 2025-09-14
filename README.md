@@ -53,7 +53,7 @@ A comprehensive admin panel for the Trees Social Media Platform with PSA managem
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/trees-admin.git
+   git clone https://github.com/techsavvyanuj/trees-admin.git
    cd trees-admin
    ```
 
