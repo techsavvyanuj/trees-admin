@@ -1,23 +1,12 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "routes": [
+  "rewrites": [
     {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
-    {
-      "src": "/(.*\\.(js|jsx|ts|tsx|css|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot|json))",
-      "dest": "/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
-  "env": {
-    "VITE_API_BASE_URL": "https://51.20.41.208/api"
-  },
   "headers": [
     {
       "source": "/(.*\\.js)",
