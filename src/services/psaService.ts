@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://51.20.41.208/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://51.20.41.208';
 
 export const psaService = {
   // Get all PSAs

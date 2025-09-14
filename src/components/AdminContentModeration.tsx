@@ -177,7 +177,7 @@ const AdminContentModeration: React.FC = () => {
   const handleDeleteContent = async (contentId: string, reportId: string) => {
     try {
       console.log('Attempting to delete content:', contentId);
-      console.log('API Base URL:', import.meta.env.VITE_API_BASE_URL || 'https://51.20.41.208/api');
+      console.log('API Base URL:', import.meta.env.VITE_API_BASE_URL || 'https://51.20.41.208');
       
       // Delete the report completely from database
       console.log('Calling deleteContent...');
