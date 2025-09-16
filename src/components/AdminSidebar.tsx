@@ -35,7 +35,7 @@ const AdminSidebar = ({ activeTab, onTabChange, isMobile, onClose }: AdminSideba
     { id: 'matchmaking', name: 'Matchmaking Oversight', icon: '💬', color: 'text-pink-600' },
     { id: 'subscriptions', name: 'Subscriptions', icon: '💎', color: 'text-yellow-600' },
     { id: 'website', name: 'Website Management', icon: '🌐', color: 'text-gray-600' },
-    { id: 'settings', name: 'Admin Settings', icon: '⚙️', color: 'text-slate-600' },
+  // { id: 'settings', name: 'Admin Settings', icon: '⚙️', color: 'text-slate-600' },
   ];
 
   const handleTabClick = (tabId: string) => {
