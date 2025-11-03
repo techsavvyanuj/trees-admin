@@ -4,7 +4,7 @@ import { AdminLivestreamControls } from './AdminLivestreamControls';
 import AdminPSAManagement from './AdminPSAManagement';
 import { AdminReportsAnalytics } from './AdminReportsAnalytics';
 import { AdminNotifications } from './AdminNotifications';
-import { AdminMatchmakingOversight } from './AdminMatchmakingOversight';
+import AdminMatchmakingOversight from './AdminMatchmakingOversight';
 import { AdminSettings } from './AdminSettings';
 import { AdminAnalyticsReports } from './AdminAnalyticsReports';
 import { AdminStaticWebsiteManagement } from './AdminStaticWebsiteManagement';
