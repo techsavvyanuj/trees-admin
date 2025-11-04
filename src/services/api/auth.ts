@@ -33,7 +33,7 @@ export const authService = {
             password: credentials.password
         };
         
-        const response = await api.post('/auth/login', loginData);
+        const response = await api.post('/api/auth/login', loginData);
         const { token, user } = response.data;
         
         // Check if user has admin role
@@ -47,7 +47,7 @@ export const authService = {
 
     // Check authentication status
     checkAuth: async () => {
-        const response = await api.get('/auth/me');
+        const response = await api.get('/api/auth/me');
         return response.data;
     },
 
