@@ -209,7 +209,7 @@ app.use('/admin', adminRateLimit);
 Update your `.env` file to point to your backend:
 
 ```env
-VITE_API_BASE_URL=https://51.20.41.208
+VITE_API_BASE_URL=https://api.inventurcubes.com
 # or your production URL
 VITE_API_BASE_URL=https://your-trees-backend.com
 ```

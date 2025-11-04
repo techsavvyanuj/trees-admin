@@ -153,7 +153,7 @@ const AdminMatchmakingOversight: React.FC = () => {
   });
 
   useEffect(() => {
-    fetchOverviewStats();
+    fetchOverview();
   }, []);
 
   useEffect(() => {
@@ -164,9 +164,9 @@ const AdminMatchmakingOversight: React.FC = () => {
     }
   }, [activeTab, matchFilters, flaggedFilters, matchPagination.page, flaggedPagination.page]);
 
-  const fetchOverviewStats = async () => {
+  const fetchOverview = async () => {
     try {
-      const response = await fetch('https://51.20.41.208/api/admin/matchmaking/overview', {
+      const response = await fetch('https://api.inventurcubes.com/api/admin/matchmaking/overview', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('adminToken')}`,
         },
@@ -190,7 +190,7 @@ const AdminMatchmakingOversight: React.FC = () => {
         ...matchFilters
       });
 
-      const response = await fetch(`https://51.20.41.208/api/admin/matchmaking/matches?${params}`, {
+      const response = await fetch(`https://api.inventurcubes.com/api/admin/matchmaking/matches?${params}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('adminToken')}`,
         },
@@ -221,7 +221,7 @@ const AdminMatchmakingOversight: React.FC = () => {
         ...flaggedFilters
       });
 
-      const response = await fetch(`https://51.20.41.208/api/admin/matchmaking/flagged-conversations?${params}`, {
+      const response = await fetch(`https://api.inventurcubes.com/api/admin/matchmaking/flagged-conversations?${params}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('adminToken')}`,
         },
@@ -243,9 +243,9 @@ const AdminMatchmakingOversight: React.FC = () => {
     }
   };
 
-  const handleSuspendUser = async (userId: string, reason: string, duration?: number) => {
+  const handleSuspendUser = async (userId: string, duration: string, reason: string) => {
     try {
-      const response = await fetch(`https://51.20.41.208/api/admin/matchmaking/suspend-user/${userId}`, {
+      const response = await fetch(`https://api.inventurcubes.com/api/admin/matchmaking/suspend-user/${userId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -272,7 +272,7 @@ const AdminMatchmakingOversight: React.FC = () => {
 
   const handleModerateChat = async (chatId: string, action: string, reason: string, reportId?: string) => {
     try {
-      const response = await fetch(`https://51.20.41.208/api/admin/matchmaking/moderate-chat/${chatId}`, {
+      const response = await fetch(`https://api.inventurcubes.com/api/admin/matchmaking/moderate-chat/${chatId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -901,8 +901,8 @@ const AdminMatchmakingOversight: React.FC = () => {
                 onClick={() => {
                   const reason = (document.getElementById('suspendReason') as HTMLTextAreaElement)?.value;
                   const duration = (document.getElementById('suspendDuration') as HTMLInputElement)?.value;
-                  if (reason) {
-                    handleSuspendUser(selectedUserId, reason, duration ? parseInt(duration) : undefined);
+                  if (reason && duration) {
+                    handleSuspendUser(selectedUserId, duration, reason);
                   }
                 }}
               >

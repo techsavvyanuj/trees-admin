@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://51.20.41.208';
+// Base API configuration
+// This should match your backend server's URL
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://api.inventurcubes.com';
 
 export const api = axios.create({
     baseURL: API_BASE_URL,

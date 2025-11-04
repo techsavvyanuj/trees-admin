@@ -27,11 +27,11 @@
 ## Environment Variables
 
 The deployment will automatically use:
-- `VITE_API_BASE_URL=https://51.20.41.208/api`
+- `VITE_API_BASE_URL=https://api.inventurcubes.com/api`
 
 ## Backend Configuration Notes
 
-Since you've updated your backend to `https://51.20.41.208/api`, make sure your backend server:
+Since you've updated your backend to `https://api.inventurcubes.com/api`, make sure your backend server:
 
 1. **Has CORS enabled** for your Vercel domain
 2. **Accepts HTTPS requests**
@@ -56,7 +56,7 @@ app.use(cors({
 
 ### SSL/HTTPS Configuration
 
-Ensure your backend at `51.20.41.208` has:
+Ensure your backend at `api.inventurcubes.com` has:
 - Valid SSL certificate
 - HTTPS enabled
 - Proper firewall rules for port 443
